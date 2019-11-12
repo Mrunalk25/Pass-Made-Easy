@@ -1,0 +1,8 @@
+CREATE PROCEDURE offers()
+BEGIN
+UPDATE register SET offer_applicable='A',offer_type='AGE_OFFER' WHERE age>=60;
+UPDATE register SET offer_applicable='A',offer_type='STUDENT_OFFER' WHERE designation='student';
+UPDATE register SET offer_applicable='A',offer_type='GOVERNMENT_SERVENT' WHERE designation='military' OR designation='government_job';
+UPDATE register SET offer_applicable='NA',offer_type='NA' WHERE designation='other';
+END;
+$
